@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    background-color: #efefef;
+}
+
+header{
+    background-color: #364552;
+    color: #fff;
+    padding: 3rem 2rem;
+}
+
+header h1{
+    font-family: 'Times New Roman', Times, serif ;
+    text-align: center;
+}
+
+#contenedor{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    background-color: #f00;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#productos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.cuadrado{
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px #000 solid;
+    border-radius: 15px;
+    background-color: #fff;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+
+.añadir:hover{
+    cursor: pointer;
+}

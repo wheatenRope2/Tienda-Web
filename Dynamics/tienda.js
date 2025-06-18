@@ -27,15 +27,26 @@ class Productos{
     getestado(){
         return this.estado;
     }
+    setestado(estado){
+        this.estado = estado;
+    }
+    getTotal(){
+        return this.total;
+    }
     setTotal(total){
         this.total = total;
     }
 
     agregar(){
-        if (estado===false){
+        if (this.estado===false){
             let nuevoProd =document.createElement("div");
-            nuevoProd.textContent = this.nombre + this.precio + this.cantidad;
+            this.cantidad = 1;
+            nuevoProd.className = "producto";
+            nuevoProd.textContent = this.nombre + " " + this.precio + " " + this.cantidad;
             this.estado = true;
+            nuevoProd.id = this.nombre;
+            document.getElementById("carrito").appendChild(nuevoProd);
+            this.total = this.precio;
         }
         else{
             this.cantidad ++;
@@ -43,8 +54,14 @@ class Productos{
     }
 
     eliminar(){
-        if (this.cantidad===1)
-            this.nombre.remove();
+        if (this.cantidad<1)
+            return;
+        let prod = document.getElementById(this.nombre);
+        if (this.cantidad===1){
+            prod.remove();
+            this.estado = false;
+            this.cantidad = 0;
+        }
         else 
             this.cantidad --;
 
@@ -52,7 +69,7 @@ class Productos{
 
     suma(){
         this.total=this.cantidad*this.precio;
-        return total;
+        return this.total;
     }
 }
 
